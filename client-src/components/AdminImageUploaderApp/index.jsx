@@ -201,7 +201,7 @@ export default class AdminImageUploaderApp extends React.Component {
               const options = {
                 aspectRatio: 1.0,
                 viewMode: 3,
-                cropBoxResizable: true,
+                cropBoxResizable: false,
                 crop: (event) => {
                   const {width, height} = event.detail;
                   this.setState({imageWidth: width, imageHeight: height});
