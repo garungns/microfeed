@@ -133,7 +133,7 @@ export default class WebGlobalSettingsApp extends React.Component {
               mediaType="favicon"
               currentImageUrl={favicon.url}
               imageSizeNotOkayFunc={(width, height) => {
-                return (width > 256 && height > 256) || (width < 48 && height < 48);
+                return (width > 1000 && height > 1000) || (width < 48 && height < 48);
               }}
               imageSizeNotOkayMsgFunc={(width, height) => {
                 if (width > 256 && height > 256) {

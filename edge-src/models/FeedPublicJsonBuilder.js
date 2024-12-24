@@ -3,6 +3,7 @@ import {
   buildAudioUrlWithTracking,
   PUBLIC_URLS,
   secondsToHHMMSS,
+  truncateString,
   htmlToPlainText
 } from "../../common-src/StringUtils";
 import {humanizeMs, msToRFC3339} from "../../common-src/TimeUtils";
@@ -234,6 +235,7 @@ export default class FeedPublicJsonBuilder {
 
     newItem['content_html'] = item.description || '';
     newItem['content_text'] = item.descriptionText || '';
+    newItem['content_short_desc'] = truncateString(text, 155);
 
     if (item.image) {
       newItem['image'] = item.image;
