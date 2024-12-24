@@ -204,7 +204,7 @@ export default class AdminImageUploaderApp extends React.Component {
                 cropBoxResizable: false,
                 crop: (event) => {
                   const {width, height} = event.detail;
-                  this.setState({imageWidth: width, imageHeight: height});
+                  this.setState({imageWidth: clientWidth, imageHeight: clientHeight});
                 },
                 ready: () => {
                   cropper.setCropBoxData({width: clientWidth, height: clientHeight});
