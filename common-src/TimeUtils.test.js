@@ -7,13 +7,13 @@ test('datetimeStringToMs', () => {
   expect(msToDatetimeLocalString(dtMs)).toBe(dtStr);
 });
 
-// test('humanizeMs', () => {
-//   const ms = 1676508181000;
-//   // XXX: we don't know the timezone of the CI server.
-//   // const noTimezoneStr = 'Wed Feb 15 2023';
-//   expect(humanizeMs(ms).indexOf('2023') !== -1).toBe(true);
+test('humanizeMs', () => {
+  const ms = 1676508181000;
+  // XXX: we don't know the timezone of the CI server.
+  // const noTimezoneStr = 'Wed Feb 15 2023';
+  expect(humanizeMs(ms).indexOf('2023') !== -1).toBe(true);
 
-//   const timezone = 'Europe/Paris';
-//   const timezoneStr = '20/12/2012';
-//   expect(humanizeMs(ms, timezone)).toBe(timezoneStr);
-// });
+  const timezone = 'Europe/Paris';
+  const timezoneStr = '16/02/2023';
+  expect(humanizeMs(ms, timezone)).toBe(timezoneStr);
+});

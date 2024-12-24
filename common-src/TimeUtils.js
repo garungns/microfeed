@@ -1,12 +1,16 @@
-export function humanizeMs(ms, timezone = null) {
-  const date = new Date(ms);
-  let newDate;
+export function humanizeMs(ms, timezone = 'UTC') {
   try {
-    newDate = new Date(date.toLocaleDateString('vi-VN', {timeZone: timezone}));
+    const date = new Date(ms);
+    const options = { timeZone: timezone };
+    const [month, day, year] = date.toLocaleDateString('en-US', options).split('/');
+    return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
   } catch (e) {
-    newDate = date;
+    const fallbackDate = new Date(ms);
+    const day = String(fallbackDate.getDate()).padStart(2, '0');
+    const month = String(fallbackDate.getMonth() + 1).padStart(2, '0');
+    const year = fallbackDate.getFullYear();
+    return `${day}/${month}/${year}`;
   }
-  return newDate.toDateString();
 }
 
 export function toHHMMSS(seconds) {
