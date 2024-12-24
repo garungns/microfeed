@@ -169,7 +169,7 @@ export default class AdminImageUploaderApp extends React.Component {
       imageWidth < 300 || imageHeight < 300;
     const imageSizeNotOkayMsg = imageSizeNotOkayMsgFunc ? imageSizeNotOkayMsgFunc(imageWidth, imageHeight) :
       `Image too small: ${parseInt(imageWidth)} x ${parseInt(imageHeight)} pixels. ` +
-      "If it's for a podcast image, Apple Podcasts requires the image to have 1400 x 1400 to 3000 x 3000 pixels.";
+      "If it's for a podcast image, Apple Podcasts requires the image to have 300 x 300 to 3000 x 3000 pixels.";
     return (<div className="lh-upload-wrapper">
       <FileUploader
         handleChange={this.onFileUpload}
@@ -199,9 +199,9 @@ export default class AdminImageUploaderApp extends React.Component {
               const {clientWidth, clientHeight} = e.target;
               const size = Math.min(clientWidth, clientHeight);
               const options = {
-                aspectRatio: 1.0,
+                aspectRatio: null,
                 viewMode: 3,
-                cropBoxResizable: false,
+                cropBoxResizable: true,
                 crop: (event) => {
                   const {width, height} = event.detail;
                   this.setState({imageWidth: clientWidth, imageHeight: clientHeight});
