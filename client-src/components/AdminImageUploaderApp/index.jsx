@@ -207,7 +207,7 @@ export default class AdminImageUploaderApp extends React.Component {
                   this.setState({imageWidth: width, imageHeight: height});
                 },
                 ready: () => {
-                  cropper.setCropBoxData({width: width, height: clientHeight});
+                  cropper.setCropBoxData({width: clientWidth, height: clientHeight});
                 }
               };
               // if (clientWidth === clientHeight) {
