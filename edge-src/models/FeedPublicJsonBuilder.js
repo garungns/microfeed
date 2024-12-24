@@ -235,7 +235,7 @@ export default class FeedPublicJsonBuilder {
 
     newItem['content_html'] = item.description || '';
     newItem['content_text'] = item.descriptionText || '';
-    newItem['content_short_desc'] = truncateString(text, 155);
+    newItem['content_short_desc'] = truncateString(item.descriptionText, 155);
 
     if (item.image) {
       newItem['image'] = item.image;
