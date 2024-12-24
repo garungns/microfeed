@@ -166,7 +166,7 @@ export default class AdminImageUploaderApp extends React.Component {
     const uploading = uploadStatus === UPLOAD_STATUS__START;
     const {imageSizeNotOkayFunc, imageSizeNotOkayMsgFunc} = this.props;
     const imageSizeNotOkay = imageSizeNotOkayFunc ? imageSizeNotOkayFunc(imageWidth, imageHeight) :
-      imageWidth < 1400 || imageHeight < 1400;
+      imageWidth < 300 || imageHeight < 300;
     const imageSizeNotOkayMsg = imageSizeNotOkayMsgFunc ? imageSizeNotOkayMsgFunc(imageWidth, imageHeight) :
       `Image too small: ${parseInt(imageWidth)} x ${parseInt(imageHeight)} pixels. ` +
       "If it's for a podcast image, Apple Podcasts requires the image to have 1400 x 1400 to 3000 x 3000 pixels.";
@@ -207,7 +207,7 @@ export default class AdminImageUploaderApp extends React.Component {
                   this.setState({imageWidth: width, imageHeight: height});
                 },
                 ready: () => {
-                  cropper.setCropBoxData({width: size, height: size});
+                  cropper.setCropBoxData({width: width, height: clientHeight});
                 }
               };
               // if (clientWidth === clientHeight) {
