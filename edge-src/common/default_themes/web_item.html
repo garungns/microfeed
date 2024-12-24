@@ -1,27 +1,63 @@
+<style>
+  .back-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding-top: 20px;
+  }
+
+  .back-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .back-button a:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+</style>
 <main>
   <!--================Blog Area =================-->
-  <section class="blog_area single-post-area section-padding">
-     <div class="container">
-        <div class="row">
-           <div class="col-lg-8 posts-list">
-              <div class="single-post">
-                 <div class="feature-img">
-                    <img class="img-fluid" src="{{items.0.image}}" alt="">
-                 </div>
-                 <div class="blog_details">
-                    <h2>{{items.0.title}}
-                    </h2>
-                    <ul class="blog-info-link mt-3 mb-4">
-                       <li><a href="#"><i class="fa fa-calendar"></i> {{items.0._microfeed.date_published_short}}</a></li>
-                    </ul>
-                    {{#items.0.content_html}}
-                    <div>{{{items.0.content_html}}}</div>
-                    {{/items.0.content_html}}
-                 </div>
-              </div>
-           </div>
+  <section class="blog_area single-post-area">
+    <div class="container">
+      <div class="row">
+        <div class="back-button">
+          <a href="\">← Quay lại trang tin tức</a>
         </div>
-     </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog_area single-post-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 posts-list">
+          <div class="single-post">
+            <div class="feature-img">
+              <img class="img-fluid" src="{{items.0.image}}" alt="">
+            </div>
+            <div class="blog_details">
+              <h2>{{items.0.title}}
+              </h2>
+              <ul class="blog-info-link mt-3 mb-4">
+                <li><a href="#"><i class="fa fa-calendar"></i> {{items.0._microfeed.date_published_short}}</a></li>
+              </ul>
+              {{#items.0.content_html}}
+              <div>{{{items.0.content_html}}}</div>
+              {{/items.0.content_html}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <!--================ Blog Area end =================-->
 </main>
