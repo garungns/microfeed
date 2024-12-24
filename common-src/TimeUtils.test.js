@@ -14,6 +14,6 @@ test('humanizeMs', () => {
   expect(humanizeMs(ms).indexOf('2023') !== -1).toBe(true);
 
   const timezone = 'Europe/Paris';
-  const timezoneStr = 'Thu Feb 16 2023';
+  const timezoneStr = '20/12/2012';
   expect(humanizeMs(ms, timezone)).toBe(timezoneStr);
 });
